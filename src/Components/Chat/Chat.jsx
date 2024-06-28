@@ -9,10 +9,12 @@ const Chat = (props) => {
   return (
     <div className='chat-container'>
         {
-            chatHistory[0].sender == 0 ? 
-            <BorisMessage message = {chatHistory[0].message}/>
-            :
-            <UserMessage message = {chatHistory[0].message}/>
+            chatHistory.array.forEach(message => {
+            message.sender == 0 ? 
+              <BorisMessage message = {message.message}/>
+              :
+              <UserMessage message = {message.message}/>
+            })                        
         }
     </div>
   )
