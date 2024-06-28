@@ -1,0 +1,9 @@
+.chat-container{
+    width: 90vw;
+    margin-left: 5vw;
+    height: 78vh;
+    background-color: rgb(162, 100, 220);
+    border-radius: 5vh;
+    margin-top: 3vh;
+}
+

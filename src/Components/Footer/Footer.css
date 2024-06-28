@@ -1,0 +1,20 @@
+.footer-container{
+    display: flex;
+    align-items: center;
+    height: 6vh;
+    background-color: rgb(26, 22, 16);
+    bottom: 0;
+    position: fixed;
+    width: 100vw;
+    justify-content: space-between;
+}
+
+.footer-link{
+    color: blue;
+    font-size: 1.3vh;
+    margin: 1vw;
+}
+
+a{
+    text-decoration: none;
+}
