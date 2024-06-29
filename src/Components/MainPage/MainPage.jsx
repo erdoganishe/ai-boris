@@ -51,7 +51,7 @@ const MainPage = () => {
         </div >
         <FileDrop />
         {/* <button onClick={downloadTxtFile("0x00123", "123")}></button> */}
-        {/* <Footer/> */}
+        <Footer/>
     </div>
   )
 }

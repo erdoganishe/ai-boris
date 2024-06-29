@@ -44,7 +44,20 @@ const InputLine = (props) => {
     try {
 
       const formData = new FormData();
-      formData.append('audio', audioData, 'recorded_audio.webm');
+      formData.append('audio', audioData, 'recorded_audio.webm')
+      console.log(formData)
+      const responceVoice = await axios.post('/audio_chat', formData)
+
+      const voiceData = responceVoice.data
+
+      let tmp = chatHistory
+
+      tmp.push({
+        "sender": 1,
+        "message": voiceData,
+      })
+      setChatHistory(tmp)
+
       console.log(formData)
       //const response = await axios.post('your-backend-endpoint', formData);
 

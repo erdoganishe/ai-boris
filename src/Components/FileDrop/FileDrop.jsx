@@ -37,7 +37,7 @@ const FileDrop = () => {
 
   return (
     <div
-      className={`file-drop-area ${dragging ? 'dragging' : ''}`}
+      className={`file-drop-area ${dragging ? 'dragging' : ''} hidden`}
       onDragEnter={handleDragEnter}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
@@ -45,7 +45,7 @@ const FileDrop = () => {
     >
       <div className="text-center">
         <div>
-        <h3>Drag & Drop Files Here</h3>
+        <h3 className='key-submit-h3'>Drag & Drop Files Here</h3>
 
         <button id = "submit-button-file" onClick={()=>{
             if (files[0]){
@@ -77,7 +77,7 @@ const FileDrop = () => {
       )}
 </div>
 <div>
-       <h3 color='rgb(208, 189, 189)'>Or just put your secret key</h3>
+       <h3 className='key-submit-h3'>Or just put your secret key</h3>
        <input className='key-input' placeholder='Your phrase...' type = 'text'></input>
        <button id = "submit-button-phrase" onClick={()=>{
             let val = document.getElementsByClassName("key-input")[0].value;

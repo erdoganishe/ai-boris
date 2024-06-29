@@ -1,6 +1,6 @@
 .file-drop-area{
-    width: 55vw;
-    height: 15vh;
+    width: 50vw;
+    height: 20vh;
     background-color: rgb(68, 40, 135);
     position: fixed;
     top: 30vh;
@@ -11,9 +11,47 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-right: 5vw;
     
+}
+
+.key-submit-h3{
+    color : rgb(208, 189, 189);
 }
 
 .hidden{
     display: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+input{
+    border: none;
+    background: transparent;
+    border-radius: 1vh;
+    color : white;
+    font-size: 1.1vw;
+
+}
+
+#submit-button-phrase{
+    width: 4vw;
+    height: 3vh;
+    background-color: rgb(122, 81, 225);
+    border-radius: 1vh;
+    color: rgb(145, 0, 0);
+    border-color: rgb(0, 0, 0);
+}
+#submit-button-file{
+    width: 4vw;
+    height: 3vh;
+    background-color: rgb(122, 81, 225);
+    border-radius: 1vh;
+    color: rgb(145, 0, 0);
+    border-color: rgb(0, 0, 0);
 }
