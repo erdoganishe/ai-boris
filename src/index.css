@@ -5,10 +5,37 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: grey;
+  background-color: rgb(47, 28, 93);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* do not group these rules */
+*::-webkit-input-placeholder {
+  color: rgb(40, 0, 63);
+}
+*:-moz-placeholder {
+  /* FF 4-18 */
+  color: rgb(40, 0, 63);
+  opacity: 1;
+}
+*::-moz-placeholder {
+  /* FF 19+ */
+  color: rgb(40, 0, 63);
+  opacity: 1;
+}
+*:-ms-input-placeholder {
+  /* IE 10+ */
+  color: rgb(40, 0, 63);
+}
+*::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgb(40, 0, 63);
+}
+*::placeholder {
+  /* modern browser */
+  color: rgb(40, 0, 63);
 }

@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     height: 6vh;
-    background-color: rgb(26, 22, 16);
+    background-color: rgb(0, 0, 0);
     bottom: 0;
     position: fixed;
     width: 100vw;
@@ -10,9 +10,9 @@
 }
 
 .footer-link{
-    color: blue;
-    font-size: 1.3vh;
-    margin: 1vw;
+    color: rgb(184, 28, 205);
+    font-size: 1.2vw;
+    margin: 2vw;
 }
 
 a{

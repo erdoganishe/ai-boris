@@ -1,0 +1,32 @@
+.prompt-line-container{
+    width: 90vw;
+    height: 5vh;
+    background-color: rgb(199, 167, 250);
+    display: flex;
+    align-items: center;
+    border-radius: 2.5vw;
+    margin-top: 2vh;
+    margin-left: 5vw;
+}
+
+.propmt-line-input{
+    background-color: transparent;
+    font-size: 1.2vw;
+    border:none;
+    color: rgb(107, 1, 1);
+    margin-left: 1.2vw;
+    width: 82vw;
+}
+
+#send-button{
+    width: 4vh;
+    height: 4vh;
+    border-radius: 1.5vh;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
