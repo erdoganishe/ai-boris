@@ -46,7 +46,7 @@ const MainPage = () => {
           {currentPageType ? <AuthPage onClick = {onClickEvent}/> : <RegisterPage onClick = {onClickEvent}/>}
           <div className='chat'>
           <Chat chatHistory = {[chatHistory, setChatHistory]}/>
-          <InputLine chatHistory = {[chatHistory, setChatHistory]}/>
+          {/* <InputLine chatHistory = {[chatHistory, setChatHistory]}/> */}
           </div>
         </div >
         <FileDrop />

@@ -9,6 +9,7 @@
     "axios": "^1.7.2",
     "crypto-js": "^4.2.0",
     "cryptojs": "^2.5.3",
+    "mic-recorder-to-mp3": "^2.2.2",
     "react": "^18.3.1",
     "react-audio-voice-recorder": "^2.2.0",
     "react-dom": "^18.3.1",
@@ -39,5 +40,18 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://test2.yacode.dev:443"
+  "proxy": "https://test2.yacode.dev:443",
+  "description": "Я БОРИС",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erdoganishe/ai-boris.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erdoganishe/ai-boris/issues"
+  },
+  "homepage": "https://github.com/erdoganishe/ai-boris#readme"
 }

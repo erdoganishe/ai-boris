@@ -7,78 +7,39 @@ import axios from 'axios'
 
 const InputLine = (props) => {
   const [chatHistory, setChatHistory] = props.chatHistory
-  const [rData, setRData] = useState(null)
-
-  const handleUpdateChatHistory = () => {
-
-    const newChatHistory = [...chatHistory];
-    setChatHistory(newChatHistory);
-
-  };
-  useEffect(()=>{
-    handleUpdateChatHistory()
-  }, [chatHistory]);
-
-  function upChHi(value){
-    console.log("UPDATE")
-    console.log(value)
-    chatHistory.push({
-      "sender": 0,
-      "message": value,
-    })
-  }
 
   const fetchData = async (formData) => {
     const res = await axios.post("/chat", formData)
     const resData = res.data
-    console.log("FETCH")
-    console.log(resData)
-    setRData(resData)
+    return resData
   }
 
-  useEffect(() => {
-    console.log("RDATA PUSH")
-    console.log(rData)
-    upChHi("RESDATAS")
-    //console.log(chatHistory)
-    // let tmp = chatHistory
-    // tmp.push({
-    //   "sender": 0,
-    //   "message": "rData",
-    // })
-    //setChatHistory(chatHistory)
-    // setChatHistory()
 
-  }, [rData])
+  const onSend = async ()=>{
 
-  // useEffect(()=>{
-  //   setChatHistory(chatHistory)
-  // },[chatHistory])
-
-
-  const onSend = ()=>{
     const value = document.getElementsByClassName('propmt-line-input')[0].value
     if (value && value !== ""){
-      //let tmp = chatHistory
-      
-      // chatHistory.push({
-      //   "sender": 0,
-      //   "message": value,
-      // })
-      upChHi(value)
-      //setChatHistory(tmp)
+     
+      console.log(value)
+      chatHistory.push({
+        "sender": 0,
+        "message": value,
+      })
+     
       document.getElementsByClassName('propmt-line-input')[0].value = ""
       
       let formData = new FormData();
       formData.append(
         "text", value
       )
+      console.log(formData)
+      console.log("111111111")
+      let result = await fetchData(formData)
+      console.log(result)
 
-      fetchData(formData)
-      console.log("ON SEND")
-      console.log(rData)
+ 
     }
-    // props.onClick
+
   }
   const addAudioElement = (blob) => {
     const url = URL.createObjectURL(blob);
@@ -90,9 +51,7 @@ const InputLine = (props) => {
 
     const handleKeyPress = (event) => {
       if (event.key === 'Enter') {
-        console.log(1)
         onSend()
-        console.log(2)
       }
     };
 
@@ -112,7 +71,7 @@ const InputLine = (props) => {
       tmp.push({
         "sender": 1,
         "message": voiceData,
-      })
+      }) 
       setChatHistory(tmp)
 
       console.log(formData)
