@@ -1,6 +1,6 @@
 
 .message-container{
-    width: 90%;
+    width: 85%;
     
     background-color: rgb(178, 162, 243);
     padding: 0.2vh;
@@ -12,7 +12,7 @@
 
 .boris-message-text{
     margin: 0.75%;
-    font-size: 1.2rvw;
+    font-size: 1.2vw;
     color : rgb(102, 3, 3);
 }
 

@@ -1,23 +1,25 @@
-.auth-container{
+.register-container{
     width: 20vw;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 90vh;
     background-color: black;
+    height: 90vh;
+
 }
 *::placeholder{
     color: white;
 }
-.auth-header{
+.register-header{
     text-align: center;
     color: white;
     font-size: 1.2vw;
     font-weight: bold;
     margin-top: 10vh;
+
 }
 
-.auth-redirect{
+.register-redirect{
     display: flex;
     justify-content: left;
     color: white;
@@ -35,14 +37,13 @@
     margin-top: 4vh;
 }
 
-.auth-button{
+.register-button{
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin-top: 8vh;
     margin-left: 2vw;
 }
-
 
 .switch-button{
     background-color: transparent;
@@ -53,13 +54,4 @@
 
 .hidden{
     display: none;
-}
-
-.hide-button{
-    width: 5vh;
-    height: 5vh;
-    background-color: blueviolet;
-    border: none;
-    border-radius: 1vh;
-    margin-left: 3vh;
 }

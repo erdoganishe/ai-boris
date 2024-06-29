@@ -10,10 +10,9 @@ const InputLine = (props) => {
   return (
     <div className='prompt-line-container'>
         <input className='propmt-line-input' placeholder = {"Give your slave Boris a job"} />
-        <button>
         <img src='Static/Icons/send.png' id = "send-button" onClick = {()=>{
           const value = document.getElementsByClassName('propmt-line-input')[0].value
-          if (value && value != ""){
+          if (value && value !== ""){
             let tmp = chatHistory
             
             tmp.push({
@@ -25,7 +24,6 @@ const InputLine = (props) => {
           }
           // props.onClick
         }}/>
-        </button>
     </div>
 
   )
