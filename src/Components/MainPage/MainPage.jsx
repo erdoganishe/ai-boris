@@ -7,6 +7,8 @@ import { useState, useEffect } from 'react'
 import InputLine from '../InputLine/InputLine'
 import AuthPage from '../AuthPage/AuthPage'
 import RegisterPage from '../RegisterPage/RegisterPage'
+import CryptoJS from 'crypto-js'
+
 const MainPage = () => {
     const [currentPageType, setCurrentPageType] = useState(true)
     const [chatHistory, setChatHistory] = useState([
@@ -21,6 +23,21 @@ const MainPage = () => {
       document.getElementsByClassName("auth-container")[0].classList.add("hidden")
     }
 
+
+    function downloadTxtFile (content, password) {
+      // Encrypt content with a password
+  
+      const encryptedContent = CryptoJS.AES.encrypt(content, password).toString();
+  
+      // Create Blob with encrypted content
+      const element = document.createElement('a');
+      const file = new Blob([encryptedContent], {type: 'text/plain'});
+      element.href = URL.createObjectURL(file);
+      element.download = 'encryptedFile.txt';
+      document.body.appendChild(element); 
+      element.click();
+    };
+
   return (
     <div className='main-page-container'>
         <Header/>
@@ -31,6 +48,7 @@ const MainPage = () => {
           <InputLine chatHistory = {[chatHistory, setChatHistory]}/>
           </div>
         </div >
+        {/* <button onClick={downloadTxtFile("0x00123", "123")}></button> */}
         <Footer/>
     </div>
   )
