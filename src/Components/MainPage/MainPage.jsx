@@ -8,6 +8,7 @@ import InputLine from '../InputLine/InputLine'
 import AuthPage from '../AuthPage/AuthPage'
 import RegisterPage from '../RegisterPage/RegisterPage'
 import CryptoJS from 'crypto-js'
+import FileDrop from '../FileDrop/FileDrop'
 
 const MainPage = () => {
     const [currentPageType, setCurrentPageType] = useState(true)
@@ -48,8 +49,9 @@ const MainPage = () => {
           <InputLine chatHistory = {[chatHistory, setChatHistory]}/>
           </div>
         </div >
+        <FileDrop />
         {/* <button onClick={downloadTxtFile("0x00123", "123")}></button> */}
-        <Footer/>
+        {/* <Footer/> */}
     </div>
   )
 }

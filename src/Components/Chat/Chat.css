@@ -5,6 +5,8 @@
     background-color: rgb(122, 81, 225);
     border-top-left-radius: 5vh;
     border-bottom-left-radius: 5vh;
+    border-top-right-radius: 5vh;
+    border-bottom-right-radius: 5vh;
     margin-top: 3vh;
     padding-top: 2vh;
     overflow-y: auto;
