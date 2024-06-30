@@ -3,12 +3,15 @@ import './RegisterPage.css'
 import AuthInput from '../AuthInput/AuthInput'
 import AuthButton from '../AuthButton/AuthButton'
 import axios from 'axios'
+// import { Buffer } from 'buffer';
+// import { TonClient, WalletContractV4, internal } from "@ton/ton";
 
 const RegisterPage = (props) => {
 
     
+          
 
-    const buttonOnClick = ()=>{
+    const buttonOnClick = async()=>{
         const inputs = document.getElementsByClassName("login-element-input")
         let email = inputs[0].value
         let pwd = inputs[2].value
@@ -22,19 +25,6 @@ const RegisterPage = (props) => {
             formData.append("password_hash", pwd)    
             console.log(formData)
             
-            const fetchData = async (data) => {
-                try {
-                console.log(data)
-                const response = await axios.post('auth/register', data, {
-                    headers: {
-                      'Content-Type': 'application/json'
-                    }})
-                console.log(response)
-                nav("../login")
-                } catch (error) {
-                console.error('Error fetching data:', error)
-                }
-            };
 
             let page = document.getElementsByClassName("register-container")[0]
             page.classList.add('hidden')

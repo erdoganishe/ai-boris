@@ -19,13 +19,21 @@ const UserMessage = (props) => {
               checkMessage(props.message) && showButtons ? 
                 <div className='confirm-buttons-container'> 
                   <button className='confirm-button' id = "yes-button" onClick={()=>{
-                    console.log("send yes back here!")
+                    if ( props.message.split("create/load").length > 1){
+                      let filedrop = document.getElementsByClassName('file-drop-area')[0]
+                      filedrop.classList.remove("hidden");
+                    }
                     setShowButtons(false)
-                  }}>Y</button>
+                  }}>
+                    {
+                      props.message.split("create/load").length > 1 ? "I have wallet" : "Yes"
+                  }</button>
                   <button className='confirm-button' id = "no-button" onClick={()=>{
                     console.log("send no  to back here!")
                     setShowButtons(false)
-                  }}>N</button>
+                  }}>{
+                    props.message.split("create/load").length > 1 ? "I don`t have wallet" : "No"
+                  }</button>
                 </div>
                : <div>
               </div>
