@@ -7,7 +7,21 @@ import './AuthPage.css'
 
 
 const AuthPage = (props) => {
-    const buttonOnClick = ()=>{}
+    const buttonOnClick = ()=>{
+        const inputs = document.getElementsByClassName("login-element-input")
+        let login = inputs[0].value
+        let pwd = inputs[1].value
+        let formData = new FormData()
+        formData.append("login", login)
+        formData.append("password", pwd)
+        
+        
+
+        console.log(formData)
+        //checkValid???????????
+        let page = document.getElementsByClassName("auth-container")[0]
+        page.classList.add('hidden')
+    }
   return (
     <div className='auth-container'>
         {/* <button className = "hide-button" onClick = {()=>{

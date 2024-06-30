@@ -40,18 +40,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://test2.yacode.dev:443",
-  "description": "Я БОРИС",
-  "main": "index.js",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/erdoganishe/ai-boris.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/erdoganishe/ai-boris/issues"
-  },
-  "homepage": "https://github.com/erdoganishe/ai-boris#readme"
+  "proxy": "https://test2.yacode.dev:443"
 }

@@ -32,3 +32,22 @@
     margin-right: 8vw;
     background-color: rgb(68, 40, 135);
 }
+
+#yes-button{
+    background-color: green;
+}
+#no-button{
+    background-color: red;
+}
+.confirm-button{
+    border: none;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    height: 1.5vw;
+    width: 1.5vw;
+
+}
+
+.hidden{
+    display: none;
+}

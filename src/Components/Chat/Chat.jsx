@@ -10,7 +10,7 @@ import { AudioRecorder } from 'react-audio-voice-recorder'
 const Chat = (props) => {
 
 
-  const [chatHistory, setChatHistory] = props.chatHistory
+  const {chatHistory, setChatHistory} = props
 
   const fetchData = async (formData) => {
     const res = await axios.post("/chat", formData)
@@ -21,14 +21,21 @@ const Chat = (props) => {
 
   const onSend = async ()=>{
 
+      try {
+
     const value = document.getElementsByClassName('propmt-line-input')[0].value
-    if (value && value !== ""){
+    if (!value && value == "") return
      
       console.log(value)
-      chatHistory.push({
+      //chatHistory.push({
+        //"sender": 0,
+        //"message": value,
+      //}) 
+       
+    handleUpdateChatHistory({
         "sender": 0,
-        "message": value,
-      })
+        "message": value
+    })
      
       document.getElementsByClassName('propmt-line-input')[0].value = ""
       
@@ -41,7 +48,22 @@ const Chat = (props) => {
       let result = await fetchData(formData)
       console.log(result)
 
- 
+      if(!result) {
+          handleUpdateChatHistory({
+              "sender": 1,
+              "message": "Error"
+          })
+
+          return
+      }
+
+        handleUpdateChatHistory({
+            "sender": 1,
+            "message": result.text
+        })
+
+    } catch(error) {
+        console.error(error.message)
     }
 
   }
@@ -72,11 +94,10 @@ const Chat = (props) => {
 
       let tmp = chatHistory
 
-      tmp.push({
-        "sender": 1,
-        "message": voiceData,
-      }) 
-      setChatHistory(tmp)
+      handleUpdateChatHistory({
+          "sender": 1,
+          "message": voiceData
+      })
 
       console.log(formData)
       //const response = await axios.post('your-backend-endpoint', formData);
@@ -88,15 +109,9 @@ const Chat = (props) => {
     }
   };
 
- const handleUpdateChatHistory = () => {
-
-    const newChatHistory = [...chatHistory];
-    setChatHistory(newChatHistory);
-
+ const handleUpdateChatHistory = (chatMessage) => {
+     setChatHistory(prevState => [...prevState, chatMessage]);
   };
-  useEffect(()=>{
-    handleUpdateChatHistory()
-  }, [chatHistory]);
 
   return (
     <div>

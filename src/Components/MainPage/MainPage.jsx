@@ -20,6 +20,13 @@ const MainPage = () => {
       setCurrentPageType(!currentPageType)
     }
 
+    function handleChatHistory(chatMessage) {
+        const currentChatHistory = chatHistory
+        currentChatHistory.push(chatMessage)
+
+        setChatHistory(currentChatHistory)
+    }
+
     const hideAuthPage = ()=>{
       document.getElementsByClassName("auth-container")[0].classList.add("hidden")
     }
@@ -45,7 +52,7 @@ const MainPage = () => {
         <div className='row-flex-container'>
           {currentPageType ? <AuthPage onClick = {onClickEvent}/> : <RegisterPage onClick = {onClickEvent}/>}
           <div className='chat'>
-          <Chat chatHistory = {[chatHistory, setChatHistory]}/>
+          <Chat chatHistory={chatHistory} setChatHistory={setChatHistory}/>
           {/* <InputLine chatHistory = {[chatHistory, setChatHistory]}/> */}
           </div>
         </div >
